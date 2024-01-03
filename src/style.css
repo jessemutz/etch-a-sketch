@@ -1,0 +1,48 @@
+@custom-media --motionOK (prefers-reduced-motion: no-preference);
+
+html {
+  --brand-hue: 195;
+  --brand-saturation: 100%;
+  --brand-lightness: 50%;
+
+  --brand-light: hsl(var(--brand-hue) var(--brand-saturation) calc(var(--brand-lightness) * 1.9));
+  --text-light: hsl(var(--brand-hue) var(--brand-saturation) 10%);
+
+  --brand-dark: hsl(var(--brand-hue) calc(var(--brand-saturation) / 2) calc(var(--brand-lightness) / 8));
+  --text-dark: hsl(var(--brand-hue) 15% 85%);
+}
+
+:root {
+  --brand: var(--brand-light);
+  --text: var(--text-light);
+
+  --font-base: system-ui, Tahoma, Geneva, Verdana, sans-serif;
+  --font-mono: monospace;
+  --size-base: 1rem;
+  --size-lg: calc(2 * var(--size-base));
+  --size-xl: calc(3 * var(--size-base));
+  --size-xxl: calc(5 * var(--size-base));
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --brand: var(--brand-dark);
+    --text: var(--text-dark);
+  }
+}
+
+/* Base theme */
+
+body {
+  font-family: var(--font-base);
+  background-color: var(--brand);
+  color: var(--text);
+}
+
+.d-flex {
+  display: flex;
+}
+
+#sketcher {
+  box-shadow: 0 2rem 2rem -1.8rem var(--text);
+}
