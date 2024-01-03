@@ -1,20 +1,24 @@
 @custom-media --motionOK (prefers-reduced-motion: no-preference);
 
-html {
-  --brand-hue: 195;
-  --brand-saturation: 100%;
-  --brand-lightness: 50%;
+:where(html) {
+  --brand-lightness: 77%;
+  --brand-chroma: 0.18;
+  --brand-hue: 218;
 
-  --brand-light: hsl(var(--brand-hue) var(--brand-saturation) calc(var(--brand-lightness) * 1.9));
-  --text-light: hsl(var(--brand-hue) var(--brand-saturation) 10%);
 
-  --brand-dark: hsl(var(--brand-hue) calc(var(--brand-saturation) / 2) calc(var(--brand-lightness) / 8));
-  --text-dark: hsl(var(--brand-hue) 15% 85%);
+  --brand: oklch(var(--brand-lightness) var(--brand-chroma) var(--brand-hue));
+
+  --brand-light: oklch(var(--brand-lightness) calc(var(--brand-chroma)/10) var(--brand-hue));
+  --text-light: oklch(var(--brand-lightness) calc(var(--brand-chroma)/10) var(--brand-hue));
+
+  --brand-dark: oklch(calc(var(--brand-lightness)/2) var(--brand-chroma) var(--brand-hue));
+  --brand-darkest: oklch(calc(var(--brand-lightness)/5) calc(var(--brand-chroma)/5) var(--brand-hue));
+  --text-dark: oklch(var(--brand-lightness) calc(var(--brand-chroma)/10) var(--brand-hue));
 }
 
 :root {
-  --brand: var(--brand-light);
-  --text: var(--text-light);
+  --color-background: var(--brand-light);
+  --color-text: var(--text-light);
 
   --font-base: system-ui, Tahoma, Geneva, Verdana, sans-serif;
   --font-mono: monospace;
@@ -26,23 +30,35 @@ html {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --brand: var(--brand-dark);
-    --text: var(--text-dark);
+    --color-background: var(--brand-darkest);
+    --color-text: var(--text-dark);
   }
 }
 
 /* Base theme */
-
 body {
   font-family: var(--font-base);
-  background-color: var(--brand);
-  color: var(--text);
+  background-color: var(--color-background);
+  color: var(--color-text);
 }
 
 .d-flex {
   display: flex;
+  flex-wrap: wrap;
 }
 
 #sketcher {
-  box-shadow: 0 2rem 2rem -1.8rem var(--text);
+  box-shadow: 0 2rem 2rem -1.8rem var(--color-text);
+}
+
+.pixel {
+  height: var(--size-base);
+  width: var(--size-base);
+  background-color: var(--color-text);
+  transition: background-color ease-out 250ms;
+  cursor: crosshair;
+}
+
+.pixel:hover {
+  background-color: var(--brand-dark);
 }
