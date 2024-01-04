@@ -22,7 +22,12 @@ function initializeGrid() {
 }
 
 function setGridSize(size) {
-  grid.setAttribute('style', `width: calc(${size} * var(--size-base) )`)
+  // grid.setAttribute('style', `width: calc(${size} * var(--size-base) )`)
+  grid.style.cssText = `
+  grid-template-rows: repeat(${size}, 1fr);
+  grid-template-columns: repeat(${size}, 1fr);
+  width: calc(var(--size-base) * ${size})
+  `;
 }
 
 // createGrid(DEFAULT_GRID_SIZE);

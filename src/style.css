@@ -59,6 +59,7 @@ p {
 #grid {
   box-shadow: 0 2rem 2rem -2rem var(--color-text);
   margin: 0 auto;
+  display: grid;
 }
 
 .button {
