@@ -1,4 +1,4 @@
-const DEFAULT_GRID_SIZE = 32
+const DEFAULT_GRID_SIZE = 20
 const DEFAULT_COLOR = "var(--brand)"
 
 let currentColor = DEFAULT_COLOR
