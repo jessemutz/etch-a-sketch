@@ -12,7 +12,6 @@ function setThemeColor() {
   let themeHueColor = document.querySelector(':where(html)')
   let hueText = document.getElementById('hue-value')
   themeHueColor.style.setProperty('--brand-hue', hueValue)
-  console.log(hueValue)
   hueText.textContent = hueValue
 }
 

@@ -83,6 +83,11 @@ p {
 
 #hue-picker {
   width: 400px;
+  margin-top: var(--size-base);
+}
+
+#rangevalue {
+  width: 3.5rem;
 }
 
 .pixel {
@@ -123,4 +128,8 @@ footer {
 .fa-github:hover {
   color: var(--brand);
   transform: rotate(-45deg) scale(1.2);
+}
+
+input[type="range"] {
+  accent-color: var(--brand-dark);
 }
