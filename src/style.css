@@ -47,6 +47,11 @@ p {
   text-align: center;
 }
 
+a,
+a:visited {
+  color: var(--color-text);
+}
+
 .d-flex {
   display: flex;
   flex-wrap: wrap;
@@ -58,22 +63,23 @@ p {
 
 #grid {
   box-shadow: 0 2rem 2rem -2rem var(--color-text);
-  margin: 0 auto;
   display: grid;
+  margin: 0 auto;
 }
 
 .button {
-  text-align: center;
   background-color: var(--brand);
-  border: 2px solid var(--brand-dark);
-  padding: var(--size-base) var(--size-lg);
   border-radius: var(--size-xl);
-  text-transform: uppercase;
-  letter-spacing: .1em;
-  font-weight: bold;
-  margin: var(--size-base) auto;
-  display: block;
+  border: 2px solid var(--brand-dark);
+  color: var(--brand-darkest);
   cursor: pointer;
+  display: block;
+  font-weight: bold;
+  letter-spacing: .1em;
+  margin: var(--size-base) auto;
+  padding: var(--size-base) var(--size-lg);
+  text-align: center;
+  text-transform: uppercase;
   transition: var(--transition);
 }
 
@@ -82,21 +88,36 @@ p {
   color: var(--text-dark);
 }
 
+label {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-top: var(--size-lg);
+  display: block;
+}
+
 #hue-picker {
-  width: 400px;
+  accent-color: var(--brand-dark);
   margin-top: var(--size-base);
+  width: 400px;
 }
 
 #rangevalue {
-  width: 3.5rem;
+  background-color: var(--brand);
+  border-radius: var(--size-base);
+  border: 2px solid var(--brand-dark);
+  color: var(--brand-darkest);
+  font-weight: bold;
+  width: 4rem;
+  font-size: var(--size-base);
+  padding: .25rem .5rem;
 }
 
 .pixel {
-  height: var(--size-base);
-  width: var(--size-base);
   background-color: white;
-  transition: var(--transition);
   cursor: crosshair;
+  height: var(--size-base);
+  transition: var(--transition);
+  width: var(--size-base);
 }
 
 .pixel:hover {
@@ -105,10 +126,10 @@ p {
 
 footer {
   display: flex;
-  justify-content: center;
-  width: 100%;
-  margin-top: var(--size-xxl);
   font-size: 1.3rem;
+  justify-content: center;
+  margin-top: var(--size-xxl);
+  width: 100%;
 }
 
 .fa-github {
@@ -129,8 +150,4 @@ footer {
 .fa-github:hover {
   color: var(--brand);
   transform: rotate(-45deg) scale(1.2);
-}
-
-input[type="range"] {
-  accent-color: var(--brand-dark);
 }
