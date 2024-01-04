@@ -47,14 +47,19 @@ body {
   flex-wrap: wrap;
 }
 
-#sketcher {
+#title {
+  text-align: center;
+}
+
+#grid {
   box-shadow: 0 2rem 2rem -1.8rem var(--color-text);
+  margin: 0 auto;
 }
 
 .pixel {
   height: var(--size-base);
   width: var(--size-base);
-  background-color: var(--color-text);
+  background-color: white;
   transition: background-color ease-out 250ms;
   cursor: crosshair;
 }
