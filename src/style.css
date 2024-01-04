@@ -3,13 +3,12 @@
 :where(html) {
   --brand-lightness: 77%;
   --brand-chroma: 0.18;
-  --brand-hue: 218;
-
+  --brand-hue: 18;
 
   --brand: oklch(var(--brand-lightness) var(--brand-chroma) var(--brand-hue));
 
-  --brand-light: oklch(var(--brand-lightness) calc(var(--brand-chroma)/10) var(--brand-hue));
-  --text-light: oklch(var(--brand-lightness) calc(var(--brand-chroma)/10) var(--brand-hue));
+  --brand-light: oklch(calc(var(--brand-lightness)*1.298) calc(var(--brand-chroma)/5) var(--brand-hue));
+  --text-light: oklch(calc(var(--brand-lightness)/5) calc(var(--brand-chroma)/5) var(--brand-hue));
 
   --brand-dark: oklch(calc(var(--brand-lightness)/2) var(--brand-chroma) var(--brand-hue));
   --brand-darkest: oklch(calc(var(--brand-lightness)/5) calc(var(--brand-chroma)/5) var(--brand-hue));
@@ -26,6 +25,8 @@
   --size-lg: calc(2 * var(--size-base));
   --size-xl: calc(3 * var(--size-base));
   --size-xxl: calc(5 * var(--size-base));
+
+  --transition: background-color ease-out 250ms;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -47,6 +48,10 @@ body {
   flex-wrap: wrap;
 }
 
+.text-center {
+  text-align: center;
+}
+
 #title {
   text-align: center;
 }
@@ -56,14 +61,67 @@ body {
   margin: 0 auto;
 }
 
+.button {
+  text-align: center;
+  background-color: var(--brand);
+  border: 2px solid var(--brand-dark);
+  padding: var(--size-base) var(--size-lg);
+  border-radius: var(--size-xl);
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  font-weight: bold;
+  margin: var(--size-base) auto;
+  display: block;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.button:hover {
+  background-color: var(--brand-dark);
+  color: var(--text-dark);
+}
+
 .pixel {
   height: var(--size-base);
   width: var(--size-base);
   background-color: white;
-  transition: background-color ease-out 250ms;
+  transition: var(--transition);
   cursor: crosshair;
 }
 
 .pixel:hover {
   background-color: var(--brand-dark);
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.fa-github {
+  color: var(--color-text);
+  transition: all 0.3s ease-in-out;
+}
+
+.copyright {
+  color: var(--color-text);
+  transition: all 0.3s ease-in-out;
+}
+
+.copyright:hover {
+  color: var(--brand);
+}
+
+.copyright:hover .fa-github,
+.fa-github:hover {
+  color: var(--brand);
+  transform: rotate(-45deg) scale(1.2);
 }
