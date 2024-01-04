@@ -12,9 +12,22 @@
 <body>
   <main>
     <h1 id="title">Etch a sketch</h1>
-    <p class="text-center">Hover over the board to draw.</p>
+    <p>Hover over the board to draw.</p>
     <div id="grid" class="d-flex"></div>
     <button id="reset-button" class="button">Reset</button>
+
+    <p>
+      <label>Adjust theme color<br />
+        <input type="range" name="color" id="hue-picker" min="0" max="256" step="1">
+      </label>
+    </p>
+    <p><i>OKLCH hue value is <span id="hue-value">128</span></i>
+    </p>
+    <p>The theme uses css variables with <a href="https://evilmartians.com/chronicles/oklch-in-css-why-quit-rgb-hsl"
+        target="_blank">OKLCH colors</a> to
+      support modern devices.<br />
+      The color palette was built off of a single color value.<br />
+      The theme also supports system dark mode settings. Try it out.</p>
   </main>
   <footer class="footer">
     <p>

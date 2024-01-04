@@ -1,10 +1,21 @@
-const DEFAULT_GRID_SIZE = 24
+const DEFAULT_GRID_SIZE = 32
 const DEFAULT_COLOR = "var(--brand)"
 
 let currentColor = DEFAULT_COLOR
 let currentGridSize = DEFAULT_GRID_SIZE
 let grid = document.getElementById('grid')
 let btnReset = document.getElementById('reset-button')
+let huePicker = document.getElementById('hue-picker')
+
+function setThemeColor() {
+  let hueValue = huePicker.value
+  let themeHueColor = document.querySelector(':where(html)')
+  let hueText = document.getElementById('hue-value')
+  themeHueColor.style.setProperty('--brand-hue', hueValue)
+  console.log(hueValue)
+  hueText.textContent = hueValue
+}
+
 
 function initializeGrid() {
   setGridSize(currentGridSize)
@@ -35,6 +46,7 @@ function resetColor() {
   pixels.forEach(pixel => pixel.removeAttribute('style'))
 }
 
+huePicker.addEventListener('input', setThemeColor)
 btnReset.addEventListener('click', resetColor)
 
 // Initialize grid on page load

@@ -3,7 +3,7 @@
 :where(html) {
   --brand-lightness: 77%;
   --brand-chroma: 0.18;
-  --brand-hue: 18;
+  --brand-hue: 218;
 
   --brand: oklch(var(--brand-lightness) var(--brand-chroma) var(--brand-hue));
 
@@ -12,7 +12,7 @@
 
   --brand-dark: oklch(calc(var(--brand-lightness)/2) var(--brand-chroma) var(--brand-hue));
   --brand-darkest: oklch(calc(var(--brand-lightness)/5) calc(var(--brand-chroma)/5) var(--brand-hue));
-  --text-dark: oklch(var(--brand-lightness) calc(var(--brand-chroma)/10) var(--brand-hue));
+  --text-dark: oklch(calc(var(--brand-lightness)*1.2) calc(var(--brand-chroma)/3) var(--brand-hue));
 }
 
 :root {
@@ -43,13 +43,13 @@ body {
   color: var(--color-text);
 }
 
+p {
+  text-align: center;
+}
+
 .d-flex {
   display: flex;
   flex-wrap: wrap;
-}
-
-.text-center {
-  text-align: center;
 }
 
 #title {
@@ -57,7 +57,7 @@ body {
 }
 
 #grid {
-  box-shadow: 0 2rem 2rem -1.8rem var(--color-text);
+  box-shadow: 0 2rem 2rem -2rem var(--color-text);
   margin: 0 auto;
 }
 
@@ -81,6 +81,10 @@ body {
   color: var(--text-dark);
 }
 
+#hue-picker {
+  width: 400px;
+}
+
 .pixel {
   height: var(--size-base);
   width: var(--size-base);
@@ -94,16 +98,11 @@ body {
 }
 
 footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
   display: flex;
-  align-items: center;
   justify-content: center;
-  gap: 10px;
   width: 100%;
-  padding: 10px;
-  font-size: 20px;
+  margin-top: var(--size-xxl);
+  font-size: 1.3rem;
 }
 
 .fa-github {
