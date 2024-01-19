@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Etch a Sketch</title>
-  <link rel="stylesheet" href="src/normalize.min.css">
-  <link rel="stylesheet" href="src/style.min.css">
+  <link rel="stylesheet" href="css/normalize.min.css">
+  <link rel="stylesheet" href="css/style.min.css">
   <script src="https://kit.fontawesome.com/4c536a6bd5.js" crossorigin="anonymous"></script>
 </head>
 
@@ -18,8 +18,8 @@
 
     <p>
       <label>Adjust theme color<br />
-        <input type="range" min="0" max="256" step="1" id="hue-picker" oninput="rangevalue.value=value" />
-        <input type="number" id="rangevalue" value="50" oninput="hue-picker.value=value">
+        <input type="range" min="0" max="256" step="1" id="hue-picker" oninput="rangevalue.innerHTML=value" />
+        <span id="rangevalue" value="50">128</span>
       </label>
     </p>
     <p>The theme uses css variables with <a href="https://evilmartians.com/chronicles/oklch-in-css-why-quit-rgb-hsl"
