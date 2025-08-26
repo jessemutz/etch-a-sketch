@@ -53,6 +53,12 @@ p {
 a,
 a:visited {
   color:  oklch(from var(--brand) l c calc(h + 180));
+  transition: all ease-out 200ms;
+}
+
+a:hover,
+a:focus {
+  color: var(--brand);
 }
 
 .d-flex {
@@ -145,11 +151,6 @@ footer {
 }
 
 .fa-github {
-  color: var(--color-text);
-  transition: all 0.3s ease-in-out;
-}
-
-.copyright {
   color: var(--color-text);
   transition: all 0.3s ease-in-out;
 }
