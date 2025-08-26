@@ -52,7 +52,7 @@ p {
 
 a,
 a:visited {
-  color: var(--color-text);
+  color:  oklch(from var(--brand) l c calc(h + 180));
 }
 
 .d-flex {
