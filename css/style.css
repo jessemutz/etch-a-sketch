@@ -7,6 +7,7 @@
   --brand-hue: 218;
 
   --brand: oklch(var(--brand-lightness) var(--brand-chroma) var(--brand-hue));
+  --brand-accent: oklch(from var(--brand) l c calc(h + 180));
 
   --brand-light: oklch(from var(--brand) calc(l*1.3) calc(c/5) h);
   --text-light: oklch(from var(--brand) calc(l/5) calc(c/5) h);
@@ -52,7 +53,7 @@ p {
 
 a,
 a:visited {
-  color:  oklch(from var(--brand) l c calc(h + 180));
+  color:  var(--brand-accent);
   transition: all ease-out 200ms;
 }
 
@@ -151,7 +152,7 @@ footer {
 }
 
 .fa-github {
-  color: var(--color-text);
+  color: var(--brand-accent);
   transition: all 0.3s ease-in-out;
 }
 
